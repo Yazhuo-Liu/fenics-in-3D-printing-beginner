@@ -39,7 +39,7 @@ conda activate fenics2019
 Check if FEniCS is installed correctly:
 
 ```bash
-python -c "import fenics; print(fenics.__version__)"
+python -c "import dolfin as df; print(df.__version__)"
 ```
 This command should output 2019.1.0.
 
