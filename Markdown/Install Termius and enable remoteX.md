@@ -83,4 +83,4 @@ After installing Termius, you will need to set it up:
 4. **Test the Remote Display:**
    - Use the `xclock` command to test the remote display. A small clock should appear on your screen.
 
-     ![clock](2024-08-26-17-44-00.png)
+     ![clock](/imgs/2024-08-26-17-44-00.png)
