@@ -50,6 +50,7 @@ After installing Termius, you will need to set it up:
 ## Enable Remote Display
 
 1. **Ensure X410 is Running:**
+
    ![X410](/imgs/2024-08-26-17-40-20.png)
    
    You can always use the trial version for educational purposes. It is no different from the paid version, except for the trial version reminder.
