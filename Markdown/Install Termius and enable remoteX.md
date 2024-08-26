@@ -64,7 +64,7 @@ After installing Termius, you will need to set it up:
    - Double-click the rule. If it turns blue, it means the port forwarding was successful.
     ![Success](/imgs/2024-08-26-17-31-44.png)
 
-   - Each time you want to enable remote display, you need to start the port forwarding.
+   - **!!! You need to start the port forwarding before using remote display**.
 
 3. **Define the `DISPLAY` Environment Variable on Your Remote Host:**
    - Edit your `.bashrc` file:
