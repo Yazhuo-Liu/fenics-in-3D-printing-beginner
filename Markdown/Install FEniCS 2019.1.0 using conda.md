@@ -27,7 +27,7 @@ conda activate fenics2019
   ```bash
   conda install -c conda-forge fenics
   ```
-    This step may take long time.
+    This step may take long time for solving the environment. (~20 min)
 
 - Install required packages
   ```bash
