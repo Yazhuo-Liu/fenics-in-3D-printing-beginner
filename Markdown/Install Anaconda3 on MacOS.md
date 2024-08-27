@@ -1,4 +1,4 @@
-# Installing Anaconda3 on macOS
+# Installing Anaconda3 and OpenMPI on macOS
 
 This guide provides step-by-step instructions on how to install Anaconda3 on a macOS system. Anaconda is a popular distribution of Python programming languages for scientific computing.
 
@@ -38,8 +38,90 @@ To verify that Anaconda was installed correctly, you can use the terminal:
 
 1. In Terminal, use the following line to prevent Anaconda from activating the base environment on startup
 
-```bash
-conda config --set auto_activate_base false
-```
+    ```bash
+    conda config --set auto_activate_base false
+    ```
 2. restart the Terminal, (base) in the command line prompt should gone.
+
+## Step 5: Installing OpenMPI on macOS
+
+This guide will walk you through the steps to install MPI (Message Passing Interface) on a Mac using Open MPI, along with the `mpi4py` Python bindings.
+
+1. **Install Homebrew (if not already installed)**
+
+    Homebrew is a package manager for macOS that simplifies the installation of software.
+
+    Open a terminal and run the following command to install Homebrew:
+
+    ```bash
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    ```
+
+    To verify that Homebrew is installed, run:
+
+    ```bash
+    brew --version
+    ```
+
+2. **Install Open MPI**
+
+    Open MPI is a popular implementation of the MPI standard. You can install it using Homebrew.
+
+    Run the following command in your terminal:
+
+    ```bash
+    brew install open-mpi
+    ```
+
+3. **Verify the Installation**
+
+    After the installation completes, verify that Open MPI and `mpirun` are installed correctly:
+
+    ```bash
+    mpirun --version
+    ```
+
+    You should see the version information for Open MPI, confirming that it is installed.
+
+4. **Install `mpi4py` in Your Conda Environment**
+
+    `mpi4py` provides Python bindings for MPI, allowing you to write MPI programs in Python.
+
+    First, activate your Conda environment (or create a new one):
+
+    ```bash
+    conda create --name mpi_env python=3.9
+    conda activate mpi_env
+    ```
+
+    Then, install `mpi4py`:
+
+    ```bash
+    conda install -c conda-forge mpi4py
+    ```
+
+5. **Write and Run a Simple MPI Program**
+
+    Create a simple Python script that uses `mpi4py` to run an MPI program.
+
+    ```python
+    from mpi4py import MPI
+
+    comm = MPI.COMM_WORLD
+    rank = comm.Get_rank()
+
+    print(f"Hello from process {rank}")
+    ```
+
+    Save this file as `mpi_hello.py`.
+
+6. **Run the MPI Program Using `mpirun`**
+
+    To run the MPI program on multiple processes, use the `mpirun` command:
+
+    ```bash
+    mpirun -n 4 python mpi_hello.py
+    ```
+
+    This command will run the program on 4 processes. Each process will print a message showing its rank.
 
