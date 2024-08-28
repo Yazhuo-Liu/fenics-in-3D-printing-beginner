@@ -5,6 +5,9 @@
 
 K-means clustering is one of the most popular unsupervised machine learning algorithms. It is used to partition a dataset into `k` distinct clusters, where each data point belongs to the cluster with the nearest mean (centroid). This tutorial will walk you through the mathematical foundation, general workflow, and a Python implementation of the k-means algorithm without using advanced libraries.
 
+#### Convergence of naive k-means
+![Convergence of k-means](/imgs/K-means_convergence.gif)
+
 ## Mathematical Foundation
 
 ### The Objective
@@ -49,6 +52,8 @@ where:
 ## Python Implementation
 
 Here is a simple implementation of k-means clustering in Python, without using advanced libraries like scikit-learn or OpenCV.
+
+Please use this code as a reference, **program independently first**, and then compare it to this example
 
 ```python
 from PIL import Image

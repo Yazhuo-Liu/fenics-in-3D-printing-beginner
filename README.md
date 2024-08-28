@@ -16,5 +16,8 @@ Heat transfer and thermoelasticity in 3D metal printing with fenics programming 
 ### 2. Programming Preparation
 - [Install Anaconda3 and OpenMPI on MacOS](/Markdown/Install%20Anaconda3%20on%20MacOS.md) 
 - [Install legacy FEniCS version 2019.1.0](/Markdown/Install%20FEniCS%202019.1.0%20using%20conda.md)
-- [Python basics](/Markdown/Python%20basis.md)
-- Use ***VS Code*** and ***GitHub Copilot*** to help you program
+- install ***VS Code*** as IDE
+- Python basics
+  - [Basic Syntax](/Markdown/Introduction%20to%20Python%20Syntax.md)
+  - [Practice Project](/Markdown/Project%20K-means.md)
+
