@@ -67,8 +67,13 @@ import random
 import matplotlib.pyplot as plt
 
 # Step 1: Read the input image using PIL
-input_image_path = 'input_image.jpg'  # Replace with your image path
+input_image_path = 'img.png'  # Replace with your image path
 image = Image.open(input_image_path)
+
+# Convert the image to RGB if it's not already in that mode
+if image.mode != 'RGB':
+    image = image.convert('RGB')
+
 image_rgb = np.array(image)
 
 # Step 2: Reshape the image to a 2D array of pixels (RGB values)
@@ -142,6 +147,7 @@ plt.show()
 print("Feature colors (RGB):")
 for i, color in enumerate(centroids.astype(int)):
     print(f"Color {i + 1}: {color}")
+
 ```
 
 ## Conclusion
