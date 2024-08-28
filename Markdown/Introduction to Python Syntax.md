@@ -1,5 +1,4 @@
-
-# Introduction to Python Syntax, NumPy, and FEniCS
+# Introduction to Python Syntax, NumPy
 
 ## 1. Python Syntax
 
@@ -224,117 +223,7 @@ j = d[1:4]  # Elements from index 1 to 3 in array d
 
     Here, `'ii->'` selects the diagonal elements (where the row and column indices are the same) and sums them.
 
-## 3. Introduction to FEniCS
+## 3. Introduction to Matplotlib
 
-### 3.1 What is FEniCS?
+## 4. Introduction to Scipy
 
-FEniCS is an open-source computing platform for solving partial differential equations (PDEs) using finite element methods. Python serves as the primary programming language for FEniCS, making it accessible for scientific computing.
-
-### 3.2 Installing FEniCS
-
-Please refer to [the previous section](/Markdown/Install%20FEniCS%202019.1.0%20using%20conda.md).
-
-### 3.3 Basic Workflow in FEniCS
-
-#### 3.3.1 Importing FEniCS Modules
-
-Start by importing the FEniCS library:
-```python
-from fenics import *
-```
-
-#### 3.3.2 Defining a Mesh
-
-Define the computational domain using a mesh:
-```python
-mesh = UnitSquareMesh(32, 32)  # Creates a 32x32 mesh over a unit square
-```
-
-#### 3.3.3 Function Spaces
-
-Define function spaces where the solution and test functions will reside:
-```python
-V = FunctionSpace(mesh, 'P', 1)  # P1 elements, linear Lagrange basis functions
-```
-
-#### 3.3.4 Boundary Conditions
-
-Set boundary conditions using Python functions:
-```python
-u_D = Expression('1 + x[0]*x[0] + 2*x[1]*x[1]', degree=2)
-
-def boundary(x, on_boundary):
-    return on_boundary
-
-bc = DirichletBC(V, u_D, boundary)
-```
-
-#### 3.3.5 Variational Problem
-
-Formulate the variational problem:
-```python
-u = TrialFunction(V)
-v = TestFunction(V)
-f = Constant(-6.0)
-a = dot(grad(u), grad(v))*dx
-L = f*v*dx
-```
-
-#### 3.3.6 Solving the Problem
-
-Solve the PDE:
-```python
-u_sol = Function(V)
-solve(a == L, u_sol, bc)
-```
-
-#### 3.3.7 Post-Processing
-
-Visualize the results:
-```python
-plot(u_sol)
-import matplotlib.pyplot as plt
-plt.show()
-```
-
-### 3.4 Example: Solving Poisson's Equation
-
-Here’s a complete example solving Poisson’s equation:
-```python
-from fenics import *
-
-# Define mesh and function space
-mesh = UnitSquareMesh(32, 32)
-V = FunctionSpace(mesh, 'P', 1)
-
-# Define boundary condition
-u_D = Expression('1 + x[0]*x[0] + 2*x[1]*x[1]', degree=2)
-
-def boundary(x, on_boundary):
-    return on_boundary
-
-bc = DirichletBC(V, u_D, boundary)
-
-# Define source term and variational problem
-f = Constant(-6.0)
-u = TrialFunction(V)
-v = TestFunction(V)
-a = dot(grad(u), grad(v))*dx
-L = f*v*dx
-
-# Compute solution
-u_sol = Function(V)
-solve(a == L, u_sol, bc)
-
-# Plot solution and mesh
-plot(u_sol)
-plot(mesh)
-import matplotlib.pyplot as plt
-plt.show()
-```
-
-### 3.5 Advanced Topics
-
-- **Nonlinear Problems**: Use `NonlinearVariationalProblem` and `NonlinearVariationalSolver` for nonlinear PDEs.
-- **Time-Dependent Problems**: Implement time-stepping for transient problems.
-- **Parallel Computing**: FEniCS supports parallel computations using MPI.
