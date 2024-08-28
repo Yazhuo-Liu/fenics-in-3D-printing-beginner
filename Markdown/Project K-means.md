@@ -49,8 +49,8 @@ where:
 5. **Repeat Until Convergence**:
    - Repeat the assignment and update steps until the centroids stabilize.
 
-## Project description
-In this project, you will apply the k-means algorithm to an image to identify the most prominent colors (clusters) within it. The RGB values of each pixel will be treated as data points in a three-dimensional space. After clustering the pixels using K-means, the resulting colors will be sorted from light to dark based on their luminance.
+# Project description
+In this project, you will apply the k-means algorithm to an image to identify 5 most prominent colors within it. The RGB values of each pixel will be treated as data points in a three-dimensional space. After clustering the pixels using K-means, the resulting colors will be **sorted from light to dark based on their luminance**.
 
 ### How to Compute Lightness and Darkness of a Color
 
@@ -106,7 +106,7 @@ $$
 
 With a luminance of 90.75, this color would be considered relatively dark, especially compared to the maximum possible luminance of 255.
 
-### Project Objective
+## Project Objective
 Your task is to implement the k-means clustering algorithm from scratch, without using advanced machine learning libraries. The algorithm should:
 
 - Read an image and extract the RGB values of each pixel.
@@ -114,19 +114,22 @@ Your task is to implement the k-means clustering algorithm from scratch, without
 - Sort the resulting colors from light to dark using their luminance values.
 - Generate and display an output image that includes the original image and rectangles representing the sorted colors.
 
-### Expected Outcome
+## Expected Outcome
 By completing this task, you will gain a deeper understanding of how clustering algorithms work and how they can be applied to real-world data, such as images. You will also learn how to manipulate and analyze color data in Python, providing a foundation for more advanced image processing techniques.
 
 **Here is the input image**:
+
 ![input](/imgs/img.png)
 
 **Here is the output image**:
+
 ![output](/imgs/output_image_sorted.jpg)
-output text:
+
+**output text:**
 ```bash
 Sorted feature colors (RGB) from light to dark:
 Color 1: [24 27 58]
-Color 2: [ 59  70 128]
+Color 2: [59 70 128]
 Color 3: [128 155 195]
 Color 4: [214 229 237]
 Color 5: [250 250 249]
