@@ -53,6 +53,11 @@ where:
 
 Here is a simple implementation of k-means clustering in Python, without using advanced libraries like scikit-learn or OpenCV.
 
+make sure you have install `pillow` package
+```bash
+conda install -c conda-forge pillow
+```
+
 Please use this code as a reference, **program independently first**, and then compare it to this example
 
 ```python
