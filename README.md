@@ -12,12 +12,14 @@ Heat transfer and thermoelasticity in 3D metal printing with fenics programming 
 
 ### 1. Basics of Additive Manufacturing
 - Read _Additive Manufacturing Technologies_ book 3rd edition Chapter 1, 2, 5, and 21.
+- [Quick starter](/Markdown/Quick%20Starter%20for%20metal%203D%20printing.md)
 
 ### 2. Programming Preparation
 - [Install Anaconda3 and OpenMPI on MacOS](/Markdown/Install%20Anaconda3%20on%20MacOS.md) 
 - [Install legacy FEniCS version 2019.1.0](/Markdown/Install%20FEniCS%202019.1.0%20using%20conda.md)
-- install ***VS Code*** as IDE
+- (Optional) [Install ***VS Code*** as IDE](/Markdown/Installing%20Visual%20Studio%20Code.md)
+- (Optional) Install Termius for SSH connection [(windows)](/Markdown/Install%20Termius%20and%20enable%20remoteX.md) (MacOS)
 - Python basics
   - [Basic Syntax](/Markdown/Introduction%20to%20Python%20Syntax.md)
-  - [Practice Project](/Markdown/Project%20K-means.md)
+  - [Practice Project: Main color extraction by K-means](/Markdown/Project%20K-means.md)
 
