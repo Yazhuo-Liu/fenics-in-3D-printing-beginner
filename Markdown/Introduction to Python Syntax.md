@@ -223,7 +223,133 @@ j = d[1:4]  # Elements from index 1 to 3 in array d
 
     Here, `'ii->'` selects the diagonal elements (where the row and column indices are the same) and sums them.
 
+
 ## 3. Introduction to Matplotlib
 
-## 4. Introduction to Scipy
+### 3.1 What is Matplotlib?
+
+Matplotlib is a popular Python library used for creating static, animated, and interactive visualizations in Python. It is widely used for generating plots, histograms, bar charts, and more.
+
+### 3.2 Installing Matplotlib
+
+You can install Matplotlib using conda:
+```bash
+conda install matplotlib
+```
+
+### 3.3 Creating Basic Plots
+
+Matplotlib provides a variety of functions to create basic plots:
+```python
+import matplotlib.pyplot as plt
+
+# Line plot
+plt.plot([1, 2, 3, 4], [10, 20, 25, 30])
+plt.title('Line Plot')
+plt.xlabel('X-axis')
+plt.ylabel('Y-axis')
+plt.show()
+```
+
+### 3.4 Other Types of Plots
+
+Matplotlib supports several types of plots, including:
+
+- **Scatter Plot**:
+    ```python
+    plt.scatter([1, 2, 3, 4], [10, 20, 25, 30])
+    plt.title('Scatter Plot')
+    plt.show()
+    ```
+
+- **Bar Chart**:
+    ```python
+    plt.bar([1, 2, 3, 4], [10, 20, 25, 30])
+    plt.title('Bar Chart')
+    plt.show()
+    ```
+
+- **Histogram**:
+    ```python
+    data = [1, 2, 2, 3, 3, 3, 4, 4, 4, 4]
+    plt.hist(data)
+    plt.title('Histogram')
+    plt.show()
+    ```
+
+### 3.5 Customizing Plots
+
+You can customize plots with labels, titles, and legends:
+```python
+plt.plot([1, 2, 3, 4], [10, 20, 25, 30], label='Line 1')
+plt.plot([1, 2, 3, 4], [15, 18, 20, 25], label='Line 2')
+plt.title('Custom Plot')
+plt.xlabel('X-axis')
+plt.ylabel('Y-axis')
+plt.legend()
+plt.show()
+```
+
+## 4. Introduction to SciPy
+
+### 4.1 What is SciPy?
+
+SciPy is a Python library used for scientific and technical computing. It builds on NumPy and provides modules for optimization, integration, interpolation, eigenvalue problems, algebraic equations, and other common scientific tasks.
+
+### 4.2 Installing SciPy
+
+You can install SciPy using conda:
+```bash
+conda install scipy
+```
+
+### 4.3 SciPy Submodules
+
+SciPy is organized into submodules for different types of operations:
+
+- **`scipy.optimize`**: For optimization algorithms (e.g., finding minima and maxima of functions).
+    ```python
+    from scipy.optimize import minimize
+
+    def objective(x):
+        return x**2 + 5
+
+    result = minimize(objective, x0=2)
+    print(result)
+    ```
+
+- **`scipy.integrate`**: For integration routines (e.g., numerical integration of functions).
+    ```python
+    from scipy.integrate import quad
+
+    result, error = quad(lambda x: x**2, 0, 1)
+    print(result)
+    ```
+
+- **`scipy.interpolate`**: For interpolation of data points.
+    ```python
+    from scipy.interpolate import interp1d
+
+    x = [0, 1, 2, 3]
+    y = [0, 1, 4, 9]
+    f = interp1d(x, y, kind='linear')
+
+    print(f(1.5))  # Linear interpolation at x=1.5
+    ```
+
+- **`scipy.linalg`**: For linear algebra operations.
+    ```python
+    from scipy.linalg import det, inv
+
+    A = np.array([[1, 2], [3, 4]])
+    determinant = det(A)
+    inverse = inv(A)
+    print(determinant)
+    print(inverse)
+    ```
+
+### 4.4 Summary
+
+SciPy, combined with NumPy, provides a comprehensive suite of tools for scientific computing. It is ideal for tasks that require more sophisticated mathematical operations beyond what is offered by NumPy alone.
+
 
