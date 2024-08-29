@@ -22,7 +22,7 @@ Heat transfer and thermoelasticity in 3D metal printing with fenics programming 
 - Python basics
   - [Basic Syntax](/Markdown/Introduction%20to%20Python%20Syntax.md)
   - [Practice Project: Main color extraction by K-means](/Markdown/Project%20K-means.md)
-  - 
+  - Practice Project: 
 ### 3. Mathematical-Physical foundation
 - Introduction to linear algebra / tensor Algebra
 - Introduction to partial differential equations
