@@ -22,4 +22,29 @@ Heat transfer and thermoelasticity in 3D metal printing with fenics programming 
 - Python basics
   - [Basic Syntax](/Markdown/Introduction%20to%20Python%20Syntax.md)
   - [Practice Project: Main color extraction by K-means](/Markdown/Project%20K-means.md)
+  - 
+### 3. Mathematical-Physical foundation
+- Introduction to linear algebra / tensor Algebra
+- Introduction to partial differential equations
+- Introduction to weak form PDEs
+- Introduction to Heat transfer
+  - Thermal conduction
+  - Thermal convection
+  - Thermal radiation
+- Introduction to elasticity
+  - Stress and Strain
+  - Hooke's Law
+  - Eigenstrain
+
+### 4. Introduction to Finite Element Method
+- Why FEM?
+- Revisit weak form PDE
+- General Strategy for Finite Element Analysis
+- FEniCS Programming
+  - Introduction to FEniCS
+  - Functions in FEniCS
+  - Project: Heat Transfer
+  - Project: Linear Elasticity
+  - Project: Laser Scanning on a Mild Steel
+  
 
