@@ -27,8 +27,8 @@ Heat transfer and thermoelasticity in 3D metal printing with fenics programming 
 - Introduction to linear algebra / tensor Algebra
 - Introduction to partial differential equations
 - Introduction to weak form PDEs
-- [Introduction to Heat transfer](/Markdown/1D%20heat%20conduction.pdf))
-  - Thermal conduction
+- [Introduction to Heat transfer](/Markdown/1D%20heat%20conduction.pdf)
+  - [Thermal conduction](/Markdown/3D%20heat%20conduction.pdf)
   - Thermal convection
   - Thermal radiation
 - Introduction to elasticity
