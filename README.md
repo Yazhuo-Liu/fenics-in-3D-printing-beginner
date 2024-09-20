@@ -43,7 +43,7 @@ Heat transfer and thermoelasticity in 3D metal printing with fenics programming 
 - FEniCS Programming
   - Introduction to FEniCS
   - Functions in FEniCS
-  - Project: Heat Transfer
+  - Project: [Heat Transfer](/Markdown/1D%20heat%20conduction.pdf)
   - Project: Linear Elasticity
   - Project: Laser Scanning on a Mild Steel
   
