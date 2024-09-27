@@ -21,7 +21,7 @@ Open the Terminal application on your macOS. You can find Terminal in `Applicati
 
 It is recommended to create a new conda environment to avoid conflicts with existing Python packages:
 ```bash
-conda create --n fenics python=3.9
+conda create -n fenics python=3.9
 conda activate fenics2019
 ```
 
