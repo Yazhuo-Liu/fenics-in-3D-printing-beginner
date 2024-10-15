@@ -31,7 +31,7 @@ Heat transfer and thermoelasticity in 3D metal printing with fenics programming 
   - [Thermal conduction](/Markdown/3D%20heat%20conduction.pdf)
   - Thermal convection
   - Thermal radiation
-- Introduction to elasticity
+- [Introduction to elasticity](/Markdown/Introduction%20to%20Mechanics.pdf)
   - Stress and Strain
   - Hooke's Law
   - Eigenstrain
@@ -43,8 +43,8 @@ Heat transfer and thermoelasticity in 3D metal printing with fenics programming 
 - FEniCS Programming
   - Introduction to FEniCS
   - Functions in FEniCS
-  - Project: [Heat Transfer](/Markdown/1D%20heat%20conduction.pdf)
-  - Project: Linear Elasticity
+  - Project: [Heat Transfer](/Programming%20Preparation/Heat%20Conduction.py)
+  - Project: [Linear Elasticity](/Programming%20Preparation/elasticity3D.py)
   - Project: Laser Scanning on a Mild Steel
   
 ### 5. Introduction to Machine Learning
