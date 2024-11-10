@@ -35,6 +35,7 @@ Heat transfer and thermoelasticity in 3D metal printing with fenics programming 
   - Stress and Strain
   - Hooke's Law
   - Eigenstrain
+- [Introduction to thermo-elasticity](/Markdown/thermo-elasticity.pdf)
 
 ### 4. Introduction to Finite Element Method
 - Why FEM?
@@ -45,6 +46,5 @@ Heat transfer and thermoelasticity in 3D metal printing with fenics programming 
   - Functions in FEniCS
   - Project: [Heat Transfer](/Programming%20Preparation/Heat%20Conduction.py)
   - Project: [Linear Elasticity](/Programming%20Preparation/elasticity3D.py)
-  - Project: Laser Scanning on a Mild Steel
-  
-### 5. Introduction to Machine Learning
+  - Project: [Laser Scanning on a Mild Steel](/Programming%20Preparation/thermoelastic.py)
+
