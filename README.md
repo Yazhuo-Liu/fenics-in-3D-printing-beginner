@@ -13,7 +13,6 @@ Heat transfer and thermoelasticity in 3D metal printing with fenics programming 
 ### 1. Basics of Additive Manufacturing
 - Read _Additive Manufacturing Technologies_ book 3rd edition Chapter 1, 2, 5, and 21.
 - [Quick starter](/Markdown/Quick%20Starter%20for%20metal%203D%20printing.md)
-
 ### 2. Programming Preparation
 - [Install Anaconda3 and OpenMPI on MacOS](/Markdown/Install%20Anaconda3%20on%20MacOS.md) 
 - [Install legacy FEniCS version 2019.1.0](/Markdown/Install%20FEniCS%202019.1.0%20using%20conda.md)
@@ -22,7 +21,6 @@ Heat transfer and thermoelasticity in 3D metal printing with fenics programming 
 - Python basics
   - [Basic Syntax](/Markdown/Introduction%20to%20Python%20Syntax.md)
   - [Practice Project: Main color extraction by K-means](/Markdown/Project%20K-means.md)
-  - Practice Project: 
 ### 3. Mathematical-Physical foundation
 - Introduction to linear algebra / tensor Algebra
 - Introduction to partial differential equations
@@ -36,7 +34,8 @@ Heat transfer and thermoelasticity in 3D metal printing with fenics programming 
   - Hooke's Law
   - Eigenstrain
 - [Introduction to thermo-elasticity](/Markdown/thermo-elasticity.pdf)
-
+  - Review of Heat transfer and Elasticity
+  - Boundary conditions
 ### 4. Introduction to Finite Element Method
 - Why FEM?
 - Revisit weak form PDE
@@ -47,4 +46,3 @@ Heat transfer and thermoelasticity in 3D metal printing with fenics programming 
   - Project: [Heat Transfer](/Programming%20Preparation/Heat%20Conduction.py)
   - Project: [Linear Elasticity](/Programming%20Preparation/elasticity3D.py)
   - Project: [Laser Scanning on a Mild Steel](/Programming%20Preparation/thermoelastic.py)
-
