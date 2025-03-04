@@ -40,15 +40,16 @@ epsilon = 0.5              # Emissivity
 sigma_SB = 5.67e-8         # Stefan-Boltzmann constant
 
 # Double ellipsoid heat source parameters
-Q0 = 100.0                 # Laser power [W]
+Q0 = 150.0                 # Laser power [W]
 v = 1.0                    # Scanning speed [m/s]
-a1, a2, b, c = 50e-6, 50e-6, 50e-6, 50e-6  # Ellipsoid parameters
+a1, a2, b, c = 50e-6, 200e-6, 50e-6, 50e-6  # Ellipsoid parameters
 f1, f2 = 0.6, 1.4          # Power distribution coefficients
 
 # Define computational domain (unit: meters)
 Lx, Ly, Lz = 1000e-6, 600e-6, 300e-6
+meshsz = 30e-6
+mesh = BoxMesh(Point(0, 0, 0), Point(Lx, Ly, Lz), int(Lx/meshsz), int(Ly/meshsz), int(Lz/meshsz))
 # mesh = BoxMesh(comm, Point(0, 0, 0), Point(Lx, Ly, Lz), 100, 60, 30)
-mesh = BoxMesh(Point(0, 0, 0), Point(Lx, Ly, Lz), 100, 60, 30)
 
 # Time parameters
 t_total = Lx/v             # Total time [s]
@@ -170,16 +171,15 @@ t = 0.0  # Initialize time
 
 # Create file to save results
 file = XDMFFile("results/temperature.xdmf")
-file.parameters["flush_output"] = True
 file.write(mesh)
-file.write(T_n, t)
+file.parameters["flush_output"] = True
 
+# save initial condition
+T_n.rename("Temperature", "Temperature")
+file.write(T_n, t)
 
 # Initialize heat source object (Note: time parameter must be initialized first)
 q_dot.t = t
-
-# Progress counter
-progress_counter = 0
 
 for step in range(num_steps):
     # Update time
@@ -215,12 +215,14 @@ for step in range(num_steps):
     # --------------------------------------------------
     T_n.assign(T)
     
-    # Save results (every 10 steps)
+    # Save results 
     # --------------------------------------------------
-    if step + 1 % 5 == 0:
+    if (step + 1) % 5 == 0:
         T.rename("Temperature", "Temperature")
         file.write(T, t)
-        progress_counter += 1
+        if rank == 0:
+            print(f"Results saved at time step {step + 1}")
+        
 
 # Save final result
 file.close()
