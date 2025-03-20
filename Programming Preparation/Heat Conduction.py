@@ -40,7 +40,7 @@ epsilon = 0.5              # Emissivity
 sigma_SB = 5.67e-8         # Stefan-Boltzmann constant
 
 # Double ellipsoid heat source parameters
-Q0 = 150.0                 # Laser power [W]
+Q0 = 150                 # Laser power [W]
 v = 1.0                    # Scanning speed [m/s]
 a1, a2, b, c = 50e-6, 200e-6, 50e-6, 50e-6  # Ellipsoid parameters
 f1, f2 = 0.6, 1.4          # Power distribution coefficients
@@ -53,7 +53,7 @@ mesh = BoxMesh(Point(0, 0, 0), Point(Lx, Ly, Lz), int(Lx/meshsz), int(Ly/meshsz)
 
 # Time parameters
 t_total = Lx/v             # Total time [s]
-dt = t_total/100           # Time step [s]
+dt = t_total/10           # Time step [s]
 num_steps = int(t_total/dt)
 
 # Define function space
@@ -92,7 +92,7 @@ Walls = AutoSubDomain(walls)
 Walls.mark(boundaries, 3)
 ds = Measure('ds', domain=mesh, subdomain_data=boundaries)  # Redefine the measure 'ds' with subdomains
 
-bc = DirichletBC(V, Constant(300.0), bottom)
+bc = DirichletBC(V, Constant(T_inf), bottom)
 bcs = [bc]
 
 # Temperature-dependent thermal conductivity
@@ -149,8 +149,8 @@ velocity = [v, 0.0, 0.0]
 q_dot = HeatSource(position, velocity, Q0, f1, f2, a1, a2, b, c, t=0, degree=1)
 
 # Define radiative heat flux
-q_bar_conv = h * (T_inf - T)  # Convective heat flux
-q_bar_rad = epsilon * sigma_SB * (T_inf**4 - T**4)  # Radiative heat flux
+q_bar_conv = h * (T - T_inf)  # Convective heat flux
+q_bar_rad = epsilon * sigma_SB * (T**4 - T_inf**4)  # Radiative heat flux
 
 # Define variational form
 F = w * rho * cp * (T - T_n) / dt * dx \
@@ -217,7 +217,7 @@ for step in range(num_steps):
     
     # Save results 
     # --------------------------------------------------
-    if (step + 1) % 5 == 0:
+    if (step + 1) % 2 == 0:
         T.rename("Temperature", "Temperature")
         file.write(T, t)
         if rank == 0:
